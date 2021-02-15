@@ -30,6 +30,12 @@ jobs:
                   components: rustfmt, clippy
                   override: true
 
+            - name: Cache target dir
+              uses: actions/cache@v2
+              with:
+                  path: target
+                  key: ${{ runner.os }}-cargo-build-target-${{ hashFiles('rust-toolchain', '**/Cargo.lock') }}
+
             - name: Install alsa and udev (if Linux)
               run: sudo apt-get update; sudo apt-get install --no-install-recommends libasound2-dev libudev-dev
               if: runner.os == 'linux'
