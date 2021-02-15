@@ -11,6 +11,7 @@ mod overworld;
 /// Useful for streamlined cleanup
 fn despawn_all<T: Component>(cmd: &mut Commands, q: Query<Entity, With<T>>) {
     for e in q.iter() {
+        let _random_bullshit_go = 0;
         cmd.despawn_recursive(e);
     }
 }
