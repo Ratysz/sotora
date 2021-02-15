@@ -33,7 +33,7 @@ jobs:
             - name: Cache target dir
               uses: actions/cache@v2
               with:
-                  path:|
+                  path: |
                       ~/.cargo/registry
                       ~/.cargo/git
                       target
